@@ -1,0 +1,35 @@
+{
+  "classification": "Public",
+  "name": "Copilot Winter Readiness Demo (Word + PowerPoint)",
+  "status": "draft-local",
+  "githubOwner": "AndrewConniff",
+  "githubRepository": "word-pptx-tire",
+  "industryScenario": "Canadian retail + auto service winter tire changeover and holiday rush readiness",
+  "fictionalCompany": "MapleWheel Retail Group",
+  "technologyFocus": [
+    "Microsoft 365 Copilot Chat",
+    "Copilot in Word",
+    "Copilot in PowerPoint"
+  ],
+  "targetAudience": "New or light Copilot users from stores and head office",
+  "durationMinutes": 90,
+  "locale": "en-CA",
+  "currency": "CAD",
+  "measurementSystem": "metric",
+  "files": [
+    "README.md",
+    "AI-CONTENT-DECLARATION.md",
+    "LICENSE",
+    "index.html",
+    "demo/DEMO-INSTRUCTIONS.md",
+    "demo/DEMO-INSTRUCTIONS.docx",
+    "demo/sample-data/Winter-Season-Readiness-Procedure.docx",
+    "demo/sample-data/Store-Auto-Service-Visit-Notes.docx",
+    "demo/sample-data/Winter-Season-Plan-Leadership.docx",
+    "demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx"
+  ],
+  "disclaimer": "This demo uses a fictional Microsoft Fake Company created for demonstration purposes. Any resemblance to real organizations, people, products, services, or data is coincidental. Do not use customer confidential information in this package.",
+  "createdDate": "2026-11-09",
+  "createdBy": "Copilot",
+  "lastUpdatedDate": "2026-11-09"
+}
