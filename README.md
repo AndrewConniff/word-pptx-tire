@@ -36,6 +36,24 @@ Head office is preparing stores and Auto Service Centres for winter tire changeo
 | [AI-CONTENT-DECLARATION.md](./AI-CONTENT-DECLARATION.md) | AI transparency statement |
 | [LICENSE](./LICENSE) | MIT license |
 
+## Published links
+
+- **Repository:** https://github.com/AndrewConniff/word-pptx-tire
+- **GitHub Pages:** https://andrewconniff.github.io/word-pptx-tire/
+- **Demo guide page:** https://andrewconniff.github.io/word-pptx-tire/index.html
+
+### Direct download links (raw)
+
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Readiness-Procedure.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Store-Auto-Service-Visit-Notes.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Plan-Leadership.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/DEMO-INSTRUCTIONS.md
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/DEMO-INSTRUCTIONS.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/manifest.json
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/AI-CONTENT-DECLARATION.md
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/LICENSE
+
 ## Setup steps
 
 1. Open Microsoft 365 Copilot Chat, Word, and PowerPoint in the same tenant.

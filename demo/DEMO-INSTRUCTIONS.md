@@ -28,6 +28,20 @@ Head office is coordinating stores and Auto Service Centres for winter demand pe
 3. `demo/sample-data/Winter-Season-Plan-Leadership.docx`
 4. `demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx`
 
+### Published links
+
+- Repository: https://github.com/AndrewConniff/word-pptx-tire
+- GitHub Pages: https://andrewconniff.github.io/word-pptx-tire/
+- Demo page: https://andrewconniff.github.io/word-pptx-tire/index.html
+
+### Direct downloads (raw)
+
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Readiness-Procedure.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Store-Auto-Service-Visit-Notes.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Plan-Leadership.docx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx
+- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/DEMO-INSTRUCTIONS.docx
+
 ## 5) Prompts
 
 ### Opening in Copilot Chat (10 min)
