@@ -1,265 +1,112 @@
-# DEMO-INSTRUCTIONS — Winter Readiness (Word + PowerPoint)
+# DEMO-INSTRUCTIONS — Follow-Along (Word + PowerPoint)
 
 **Classification: Public**  
-**Fictional Company:** MapleWheel Retail Group  
-**Tool focus:** Microsoft 365 Copilot Chat, Copilot in Word, Copilot in PowerPoint (no agents)
+**Fictional Company:** MapleWheel Retail Group
 
-This demo uses a fictional Microsoft Fake Company created for demonstration purposes. Any resemblance to real organizations, people, products, services, or data is coincidental. Do not use customer confidential information in this package.
+## Demo goal
 
-## 1) Demo title
+Show a follow-along workflow where participants:
+1. generate chart visuals from the shared Excel file,
+2. edit provided Word docs in-file and via Chat,
+3. create a PowerPoint from Chat,
+4. refine slides inside the branded PPTX template.
 
-90-minute Microsoft 365 Copilot demo: winter tire changeover + holiday readiness for stores and Auto Service Centres.
+## Files to open
 
-## 2) Scenario
+1. `demo/sample-data/shared/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx`
+2. `demo/sample-data/Winter-Season-Readiness-Procedure.docx`
+3. `demo/sample-data/Store-Auto-Service-Visit-Notes.docx`
+4. `demo/sample-data/Winter-Season-Plan-Leadership.docx`
+5. `demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx`
 
-Head office is coordinating stores and Auto Service Centres for winter demand peaks and holiday traffic. You will show how Copilot helps draft operations content quickly, adapt tone for different audiences, and turn planning material into briefing slides.
+## Follow-along run order
 
-## 3) Demo tool and mode
+### A) Build visuals from Excel (Analyst/Copilot in Excel)
 
-- **Opening (10 min):** Copilot Chat prompting basics.
-- **Word segment (35 min):** drafting, rewrite, table creation, summarization.
-- **PowerPoint segment (35 min):** deck generation, executive rewrite, slide management, speaker notes.
-- **Close (10 min):** learner Q&A checkpoint + day-one habits.
+**Where this happens:** Excel, workbook `Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx`.
 
-## 4) Files to attach (execution order)
-
-1. `demo/sample-data/Winter-Season-Readiness-Procedure.docx`
-2. `demo/sample-data/Store-Auto-Service-Visit-Notes.docx`
-3. `demo/sample-data/Winter-Season-Plan-Leadership.docx`
-4. `demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx`
-
-### Published links
-
-- Repository: https://github.com/AndrewConniff/word-pptx-tire
-- GitHub Pages: https://andrewconniff.github.io/word-pptx-tire/
-- Demo page: https://andrewconniff.github.io/word-pptx-tire/index.html
-
-### Direct downloads (raw)
-
-- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Readiness-Procedure.docx
-- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Store-Auto-Service-Visit-Notes.docx
-- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/Winter-Season-Plan-Leadership.docx
-- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx
-- https://raw.githubusercontent.com/AndrewConniff/word-pptx-tire/main/demo/DEMO-INSTRUCTIONS.docx
-
-## 5) Prompts
-
-### Execution context map (what to open before each prompt)
-
-| Prompt | Run in | Open this first | Chat-grounding alternative |
-|---|---|---|---|
-| 0.1, 0.2 | Copilot Chat | No source file required | N/A |
-| W1 | Word | `Winter-Season-Readiness-Procedure.docx` + `Store-Auto-Service-Visit-Notes.docx` | Attach both files in Copilot Chat |
-| W2 | Word | The W1 bulletin draft | Paste W1 output into Chat and ask for rewrites |
-| W3 | Word | `Winter-Season-Readiness-Procedure.docx` | Attach procedure file in Chat |
-| W4 | Word | `Winter-Season-Readiness-Procedure.docx` | Attach procedure file in Chat |
-| P1 | PowerPoint | New deck or `MapleWheel-Branded-PowerPoint-Template.pptx` | Ask Chat for slide outline then paste |
-| P2 | PowerPoint | `Winter-Season-Plan-Leadership.docx` | Attach leadership plan in Chat |
-| P3 | PowerPoint | Deck produced in P2 | Paste current slide text/headlines in Chat |
-| P4 | PowerPoint | Deck produced in P3 | Paste slide content in Chat |
-
-### Opening in Copilot Chat (10 min)
-
-#### Prompt 0.1 (weak)
-
-**Exact prompt text:**
-
+Prompt A1:
 ```text
-Write an update for stores about winter readiness.
+Create a chart comparing weekly Winter Tire Sales (CAD) and Snowfall (cm) by region.
+Use a layout that is easy to explain in 60 seconds.
 ```
 
-**Sources/files used:** none  
-**Required result format:** short update  
-**Acceptance criteria:** output is generic enough to discuss weaknesses  
-**Next handoff:** compare with stronger prompt  
-**Expected output:** broad update with missing specificity
-
-#### Prompt 0.2 (strong)
-
-**Exact prompt text:**
-
+Prompt A2:
 ```text
-You are helping a Canadian retail and auto-service organization prepare for winter tire season and holiday rush.
-Goal: Draft a practical weekly update for store teams.
-Context: mixed audience of service advisors, associates, and store managers. Keep Canadian tone and spelling.
-Source: use realistic assumptions for scheduling, safety, staffing, and merchandising in winter.
-Expectations: 250-300 words, clear headings, specific actions by role, include one customer-service reminder and one safety reminder.
+Summarize 3 insights from this chart that matter for store and auto service readiness.
 ```
 
-**Sources/files used:** realistic assumptions only  
-**Required result format:** 250-300 words with headings and role actions  
-**Acceptance criteria:** clear, role-based, action-ready, Canadian spelling  
-**Next handoff:** point to Prompt Coach + prompt gallery  
-**Expected output:** structured operational update ready for editing
+Save or copy one chart image for Word/PPT use.
 
----
+### B) Edit in Word (in-file path)
 
-### Word demos (35 min)
+**Where this happens:** Word, file `Winter-Season-Readiness-Procedure.docx`.
 
-#### Prompt W1 — Weekly bulletin from short prompt + file references
-
-**Exact prompt text:**
-
+Prompt W1:
 ```text
-Create a weekly store bulletin for Week -2 before winter tire peak.
-Use these files as source context:
-1) Winter-Season-Readiness-Procedure.docx
-2) Store-Auto-Service-Visit-Notes.docx
-Audience: stores and auto service teams.
-Format: title, 5 short sections, and a “This week by role” list.
-Keep it practical, specific, and in en-CA language.
+Rewrite the opening section in plain, friendly language for store associates.
+Keep all actions and dates intact.
 ```
 
-**Sources/files used:** Procedure + Visit notes  
-**Required result format:** title + 5 sections + role list  
-**Acceptance criteria:** references both files; practical weekly actions; en-CA language  
-**Next handoff:** rewrite for two audience levels  
-**Expected output:** operational bulletin draft suitable for store communications
+**Where this happens:** Word, file `Store-Auto-Service-Visit-Notes.docx`.
 
-#### Prompt W2 — Rewrite by audience
-
-**Exact prompt text:**
-
+Prompt W2:
 ```text
-Rewrite this bulletin in two versions:
-Version A: plain, friendly language for store associates (about Grade 8 readability).
-Version B: concise update for regional leadership (max 180 words, sharper executive tone).
-Keep facts consistent between versions.
+Convert key follow-ups into a table with:
+Store | Issue | Owner role | Due date | Escalation needed.
 ```
 
-**Sources/files used:** W1 output  
-**Required result format:** two clearly labelled versions  
-**Acceptance criteria:** simpler associate version + concise executive version; facts unchanged  
-**Next handoff:** convert checklist to table  
-**Expected output:** audience-tailored variants
+### C) Edit using Copilot Chat (doc-grounded alternative)
 
-#### Prompt W3 — Readiness checklist table
+**Where this happens:** Copilot Chat with docx files attached.
 
-**Exact prompt text:**
-
+Prompt C1:
 ```text
-From the readiness checklist in Winter-Season-Readiness-Procedure.docx, create a table with these columns:
-Checklist item | Owner | Due date | Status notes.
-Infer realistic owners by role and assign due dates across Week -2 and Week -1.
-Use concise action wording.
+Using Winter-Season-Readiness-Procedure.docx and Store-Auto-Service-Visit-Notes.docx,
+draft a one-page weekly operations bulletin for stores and service teams.
+Include 5 priority actions and 3 risks.
 ```
 
-**Sources/files used:** Procedure checklist section  
-**Required result format:** table with four required columns  
-**Acceptance criteria:** all checklist rows mapped to owner + due date; concise action text  
-**Next handoff:** summarize and ask follow-up questions  
-**Expected output:** ownership-ready tracking table
-
-#### Prompt W4 — Summary and follow-up questions
-
-**Exact prompt text:**
-
+Prompt C2:
 ```text
-Summarize Winter-Season-Readiness-Procedure.docx in 8 bullets for a new store manager.
-Then ask two practical follow-up questions that clarify edge cases.
-Include one about what happens when a customer misses a tire appointment.
+Rewrite this bulletin for regional leadership in 6 concise bullets with owner/date actions.
 ```
 
-**Sources/files used:** Procedure  
-**Required result format:** 8 bullets + 2 follow-up questions  
-**Acceptance criteria:** practical manager summary; includes missed-appointment edge case question  
-**Next handoff:** move to PowerPoint creation  
-**Expected output:** concise brief with open decision points
+### D) Create PowerPoint from Chat
 
----
+**Where this happens:** Copilot Chat with these files attached:
+`Winter-Season-Plan-Leadership.docx` + your chart insight text from section A.
 
-### PowerPoint demos (35 min)
-
-#### Prompt P1 — 5-slide store huddle deck
-
-**Exact prompt text:**
-
+Prompt D1:
 ```text
-Create a 5-slide store huddle deck for Week -2 winter readiness.
-Audience: store associates and service advisors.
-Include: priorities, booking reminders, safety reminders, merchandising actions, and today’s KPI focus.
-Use concise slide headlines and 3-4 bullets per slide.
+Create a 7-slide leadership deck outline with:
+Context, trend insight, readiness actions, risks, asks, and next-week timeline.
+Use executive tone and concise slide headlines.
 ```
 
-**Sources/files used:** existing operational context  
-**Required result format:** 5-slide huddle deck  
-**Acceptance criteria:** all five content requirements included; concise slide structure  
-**Next handoff:** leadership update from plan file  
-**Expected output:** practical huddle presentation
+### E) Build/refine slides inside PPT template
 
-#### Prompt P2 — Leadership update from source file
+**Where this happens:** PowerPoint with `MapleWheel-Branded-PowerPoint-Template.pptx` open.
 
-**Exact prompt text:**
-
+Prompt P1:
 ```text
-Create a leadership update deck using Winter-Season-Plan-Leadership.docx.
-Build a concise update with goals, category priorities, KPI status, timeline, and top risks.
-Keep an executive tone and use en-CA language.
+Using this outline, create slides in this deck using the current template style.
+Keep each slide to one headline and 3-4 bullets.
 ```
 
-**Sources/files used:** Leadership plan docx  
-**Required result format:** concise executive update deck  
-**Acceptance criteria:** includes goals, priorities, KPIs, timeline, risks; executive tone  
-**Next handoff:** rewrite headlines and adjust structure  
-**Expected output:** leadership brief draft deck
-
-#### Prompt P3 — Executive rewrite + structural edits
-
-**Exact prompt text:**
-
+Prompt P2:
 ```text
-Revise the current deck:
-1) Rewrite all slide headlines in an executive tone.
-2) Add a section header slide before KPI content.
-3) Add a final slide titled “Risks and asks”.
-4) Reorder slides so the flow is: context, goals, KPI, risks, asks, timeline.
-Keep slide text concise and presentation-ready.
+Add one slide titled "Risks and asks" and one slide titled "Decisions needed this week".
+Then reorder slides for this flow:
+Context -> Trends -> Actions -> Risks -> Decisions -> Timeline.
 ```
 
-**Sources/files used:** P2 deck  
-**Required result format:** revised and reordered deck  
-**Acceptance criteria:** all four operations completed in-order  
-**Next handoff:** summarize + speaker notes  
-**Expected output:** polished leadership flow
-
-#### Prompt P4 — Deck summary + speaker notes
-
-**Exact prompt text:**
-
+Prompt P3:
 ```text
-Summarize this deck in 6 bullets for the presenter.
-Then draft speaker notes for the “Risks and asks” slide (60-90 seconds spoken length).
-Focus on trade-offs, decisions needed, and next-week actions.
+Draft speaker notes for the "Trends" slide and "Risks and asks" slide (60-90 seconds each).
 ```
 
-**Sources/files used:** revised deck from P3  
-**Required result format:** 6 bullets + one set of speaker notes  
-**Acceptance criteria:** decision-focused summary; clear 60-90 second talk track  
-**Next handoff:** close + habits  
-**Expected output:** presenter-ready speaking support
+## Close (learner follow-along)
 
-## 6) Build/configure notes
-
-- Optional: open `MapleWheel-Branded-PowerPoint-Template.pptx` and apply its visual style as a baseline.
-- Keep locale conventions to Canadian spelling, CAD, and metric values.
-
-## 7) Test and validate
-
-- Ensure each output references the requested source files.
-- Ensure audience rewrite clearly changes tone while preserving facts.
-- Ensure PowerPoint structural operations (insert slide + reorder) are explicitly visible.
-
-## 8) Cleanup
-
-- Remove any accidental real customer references from prompts or outputs before sharing.
-
-## Learner check questions
-
-- After Word: “Which part of prompt framing changed quality most: goal, context, source, or expectations?”
-- After PowerPoint: “When is headline rewrite enough, and when should you regenerate full slides?”
-
-## Day-one habits (close)
-
-1. Lead with goal + audience + files + format.
-2. Use audience rewrites before distribution.
-3. End with a validation question to expose assumptions.
+1. Ask learners to run one in-file Word prompt and one Chat-grounded prompt.
+2. Ask learners to choose template-first vs Chat-first PPT creation for their own use case.

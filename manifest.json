@@ -26,10 +26,12 @@
     "demo/sample-data/Winter-Season-Readiness-Procedure.docx",
     "demo/sample-data/Store-Auto-Service-Visit-Notes.docx",
     "demo/sample-data/Winter-Season-Plan-Leadership.docx",
-    "demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx"
+    "demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx",
+    "demo/sample-data/shared/Canada-Wide-Winter-Tire-Sales-Weather-2023-2026.xlsx",
+    "demo/sample-data/shared/Analyst-to-Outlook-Teams-Workflow.md"
   ],
   "disclaimer": "This demo uses a fictional Microsoft Fake Company created for demonstration purposes. Any resemblance to real organizations, people, products, services, or data is coincidental. Do not use customer confidential information in this package.",
   "createdDate": "2026-11-09",
   "createdBy": "Copilot",
-  "lastUpdatedDate": "2026-11-09"
+  "lastUpdatedDate": "2026-11-10"
 }
