@@ -44,6 +44,20 @@ Head office is coordinating stores and Auto Service Centres for winter demand pe
 
 ## 5) Prompts
 
+### Execution context map (what to open before each prompt)
+
+| Prompt | Run in | Open this first | Chat-grounding alternative |
+|---|---|---|---|
+| 0.1, 0.2 | Copilot Chat | No source file required | N/A |
+| W1 | Word | `Winter-Season-Readiness-Procedure.docx` + `Store-Auto-Service-Visit-Notes.docx` | Attach both files in Copilot Chat |
+| W2 | Word | The W1 bulletin draft | Paste W1 output into Chat and ask for rewrites |
+| W3 | Word | `Winter-Season-Readiness-Procedure.docx` | Attach procedure file in Chat |
+| W4 | Word | `Winter-Season-Readiness-Procedure.docx` | Attach procedure file in Chat |
+| P1 | PowerPoint | New deck or `MapleWheel-Branded-PowerPoint-Template.pptx` | Ask Chat for slide outline then paste |
+| P2 | PowerPoint | `Winter-Season-Plan-Leadership.docx` | Attach leadership plan in Chat |
+| P3 | PowerPoint | Deck produced in P2 | Paste current slide text/headlines in Chat |
+| P4 | PowerPoint | Deck produced in P3 | Paste slide content in Chat |
+
 ### Opening in Copilot Chat (10 min)
 
 #### Prompt 0.1 (weak)

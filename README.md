@@ -64,6 +64,20 @@ Head office is preparing stores and Auto Service Centres for winter tire changeo
 
 ## Prompt sequence (exact order)
 
+### Where to run each prompt (file + app)
+
+| Step | Open app | Open file(s) | Alternative (Copilot Chat grounding) |
+|---|---|---|---|
+| Prompt 0.1, 0.2 | Copilot Chat | No file required | N/A |
+| Prompt W1 | Word | Open `Winter-Season-Readiness-Procedure.docx` and `Store-Auto-Service-Visit-Notes.docx` | In Copilot Chat, attach both docs and run W1 there |
+| Prompt W2 | Word | Stay in the bulletin doc created from W1 | In Chat, reference the W1 output you just generated |
+| Prompt W3 | Word | Open `Winter-Season-Readiness-Procedure.docx` | In Chat, attach procedure doc and request table output |
+| Prompt W4 | Word | Open `Winter-Season-Readiness-Procedure.docx` | In Chat, attach procedure doc and run summary prompt |
+| Prompt P1 | PowerPoint | New blank deck or `MapleWheel-Branded-PowerPoint-Template.pptx` | In Chat, ask for slide outline text then paste into PPT |
+| Prompt P2 | PowerPoint | Open `Winter-Season-Plan-Leadership.docx` as source in Copilot prompt | In Chat, attach leadership plan and ask for slide-by-slide draft |
+| Prompt P3 | PowerPoint | Stay in deck generated in P2 | In Chat, paste slide list/headlines and request rewrite/reorder |
+| Prompt P4 | PowerPoint | Stay in revised deck from P3 | In Chat, paste slide text and ask for notes/summary |
+
 ### Opening in Copilot Chat (10 min)
 
 **Prompt 0.1 — Weak prompt (show limitations):**
