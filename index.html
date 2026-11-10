@@ -23,12 +23,18 @@
     .prompt-box { border: 1px solid #d9e2ee; border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
     .prompt-head { background: #eef3fa; padding: 10px 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
     .prompt-head strong { font-size: 0.98rem; }
+    .where { background: #f8fbff; border-top: 1px solid #e1e9f7; border-bottom: 1px solid #e1e9f7; padding: 8px 12px; font-size: 0.85rem; color: #243b63; font-weight: 600; }
     .prompt-body { margin: 0; padding: 12px; background: #fff; white-space: pre-wrap; font-family: Consolas, "Courier New", monospace; font-size: 0.9rem; line-height: 1.4; }
     button { border: none; background: var(--accent); color: #fff; padding: 7px 10px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; }
     button:hover { filter: brightness(0.95); }
     .small { color: var(--muted); font-size: 0.92rem; }
     .footer { margin-top: 30px; font-size: 0.9rem; color: var(--muted); }
     .prep { background: #eef4ff; border: 1px solid #cfdbf7; border-radius: 8px; padding: 12px 14px; margin: 16px 0 20px; }
+    .tabs { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+    .tab-btn { background: #d7e3f7; color: #163765; border: 1px solid #c1d4f2; padding: 8px 12px; border-radius: 999px; font-weight: 600; }
+    .tab-btn.active { background: #0f2b4d; color: #fff; border-color: #0f2b4d; }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
   </style>
 </head>
 <body>
@@ -53,84 +59,58 @@
       <a href="./demo/sample-data/Winter-Season-Plan-Leadership.docx">Winter Season Plan for Leadership</a>
       <a href="./demo/sample-data/MapleWheel-Branded-PowerPoint-Template.pptx">Branded PowerPoint Template</a>
     </div>
-
-    <h2 class="section-title">Presenter preparation</h2>
-    <div class="prep">
-      <ol>
-        <li>Download all sample files and upload them to one OneDrive or SharePoint folder.</li>
-        <li>Open Copilot Chat, Word, and PowerPoint with the same signed-in account.</li>
-        <li>Open the two source Word docs and keep the template PPTX available in recent files.</li>
-        <li>Create a clean copy of each file for each delivery session (for example: Tue, Wed, Thu).</li>
-        <li>Run all prompts once the day before and keep fallback screenshots for each major result.</li>
-      </ol>
+    <div class="tabs">
+      <button class="tab-btn active" onclick="showTab('runbook', this)">Runbook</button>
+      <button class="tab-btn" onclick="showTab('storyline', this)">Storyline</button>
+      <button class="tab-btn" onclick="showTab('prep', this)">Prep</button>
     </div>
 
-    <h2 class="section-title">Live session directions (90 min)</h2>
-    <ol>
-      <li>Start in Copilot Chat (10 min) with weak prompt, then stronger prompt.</li>
-      <li>Switch to Word (35 min): W1 → W2 → W3 → W4.</li>
-      <li>Switch to PowerPoint (35 min): P1 → P2 → P3 → P4.</li>
-      <li>Close with learner questions and day-one habits (10 min).</li>
-    </ol>
-
-    <h2 class="section-title">Where to run each prompt</h2>
-    <div class="prep">
-      <ol>
-        <li><strong>0.1 and 0.2:</strong> Run in Copilot Chat (no files required).</li>
-        <li><strong>W1:</strong> Run in Word with both source docs open (Procedure + Visit Notes). Chat alternative: attach both files in Copilot Chat.</li>
-        <li><strong>W2:</strong> Run in Word in the bulletin draft from W1. Chat alternative: paste W1 output and request two rewrites.</li>
-        <li><strong>W3 and W4:</strong> Run in Word with Procedure doc open. Chat alternative: attach procedure doc and run prompt.</li>
-        <li><strong>P1:</strong> Run in PowerPoint (new deck or branded template). Chat alternative: generate slide outline in Chat first.</li>
-        <li><strong>P2:</strong> Run in PowerPoint with Leadership Plan doc as source. Chat alternative: attach plan in Chat and ask for slide draft.</li>
-        <li><strong>P3 and P4:</strong> Run in the same deck created in P2. Chat alternative: paste slide text/headlines and ask for rewrite/notes.</li>
-      </ol>
-    </div>
-
+    <section id="runbook" class="tab-panel active">
     <h2 class="section-title">Prompts (copy-ready)</h2>
 
     <h3>Opening (Copilot Chat)</h3>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt 0.1 — Weak prompt</strong><button onclick="copyPrompt('p01')">Copy</button></div><pre id="p01" class="prompt-body">Write an update for stores about winter readiness.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt 0.2 — Strong prompt</strong><button onclick="copyPrompt('p02')">Copy</button></div><pre id="p02" class="prompt-body">You are helping a Canadian retail and auto-service organization prepare for winter tire season and holiday rush.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt 0.1 — Weak prompt</strong><button onclick="copyPrompt('p01')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat (no file open required).</div><pre id="p01" class="prompt-body">Write an update for stores about winter readiness.</pre></div>
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt 0.2 — Strong prompt</strong><button onclick="copyPrompt('p02')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Copilot Chat (no file open required).</div><pre id="p02" class="prompt-body">You are helping a Canadian retail and auto-service organization prepare for winter tire season and holiday rush.
 Goal: Draft a practical weekly update for store teams.
 Context: mixed audience of service advisors, associates, and store managers. Keep Canadian tone and spelling.
 Source: use realistic assumptions for scheduling, safety, staffing, and merchandising in winter.
 Expectations: 250-300 words, clear headings, specific actions by role, include one customer-service reminder and one safety reminder.</pre></div>
 
     <h3>Word</h3>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W1</strong><button onclick="copyPrompt('w1')">Copy</button></div><pre id="w1" class="prompt-body">Create a weekly store bulletin for Week -2 before winter tire peak.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W1</strong><button onclick="copyPrompt('w1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Word with both files open: Winter-Season-Readiness-Procedure.docx and Store-Auto-Service-Visit-Notes.docx.</div><pre id="w1" class="prompt-body">Create a weekly store bulletin for Week -2 before winter tire peak.
 Use these files as source context:
 1) Winter-Season-Readiness-Procedure.docx
 2) Store-Auto-Service-Visit-Notes.docx
 Audience: stores and auto service teams.
 Format: title, 5 short sections, and a “This week by role” list.
 Keep it practical, specific, and in en-CA language.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W2</strong><button onclick="copyPrompt('w2')">Copy</button></div><pre id="w2" class="prompt-body">Rewrite this bulletin in two versions:
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W2</strong><button onclick="copyPrompt('w2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Word in the bulletin draft created from W1.</div><pre id="w2" class="prompt-body">Rewrite this bulletin in two versions:
 Version A: plain, friendly language for store associates (about Grade 8 readability).
 Version B: concise update for regional leadership (max 180 words, sharper executive tone).
 Keep facts consistent between versions.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W3</strong><button onclick="copyPrompt('w3')">Copy</button></div><pre id="w3" class="prompt-body">From the readiness checklist in Winter-Season-Readiness-Procedure.docx, create a table with these columns:
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W3</strong><button onclick="copyPrompt('w3')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Word with Winter-Season-Readiness-Procedure.docx open.</div><pre id="w3" class="prompt-body">From the readiness checklist in Winter-Season-Readiness-Procedure.docx, create a table with these columns:
 Checklist item | Owner | Due date | Status notes.
 Infer realistic owners by role and assign due dates across Week -2 and Week -1.
 Use concise action wording.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W4</strong><button onclick="copyPrompt('w4')">Copy</button></div><pre id="w4" class="prompt-body">Summarize Winter-Season-Readiness-Procedure.docx in 8 bullets for a new store manager.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt W4</strong><button onclick="copyPrompt('w4')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: Word with Winter-Season-Readiness-Procedure.docx open.</div><pre id="w4" class="prompt-body">Summarize Winter-Season-Readiness-Procedure.docx in 8 bullets for a new store manager.
 Then ask two practical follow-up questions that clarify edge cases.
 Include one about what happens when a customer misses a tire appointment.</pre></div>
 
     <h3>PowerPoint</h3>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P1</strong><button onclick="copyPrompt('p1')">Copy</button></div><pre id="p1" class="prompt-body">Create a 5-slide store huddle deck for Week -2 winter readiness.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P1</strong><button onclick="copyPrompt('p1')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: PowerPoint in a new deck or MapleWheel-Branded-PowerPoint-Template.pptx.</div><pre id="p1" class="prompt-body">Create a 5-slide store huddle deck for Week -2 winter readiness.
 Audience: store associates and service advisors.
 Include: priorities, booking reminders, safety reminders, merchandising actions, and today’s KPI focus.
 Use concise slide headlines and 3-4 bullets per slide.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P2</strong><button onclick="copyPrompt('p2')">Copy</button></div><pre id="p2" class="prompt-body">Create a leadership update deck using Winter-Season-Plan-Leadership.docx.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P2</strong><button onclick="copyPrompt('p2')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: PowerPoint with Winter-Season-Plan-Leadership.docx available as source.</div><pre id="p2" class="prompt-body">Create a leadership update deck using Winter-Season-Plan-Leadership.docx.
 Build a concise update with goals, category priorities, KPI status, timeline, and top risks.
 Keep an executive tone and use en-CA language.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P3</strong><button onclick="copyPrompt('p3')">Copy</button></div><pre id="p3" class="prompt-body">Revise the current deck:
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P3</strong><button onclick="copyPrompt('p3')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: PowerPoint in the deck created from P2.</div><pre id="p3" class="prompt-body">Revise the current deck:
 1) Rewrite all slide headlines in an executive tone.
 2) Add a section header slide before KPI content.
 3) Add a final slide titled “Risks and asks”.
 4) Reorder slides so the flow is: context, goals, KPI, risks, asks, timeline.
 Keep slide text concise and presentation-ready.</pre></div>
-    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P4</strong><button onclick="copyPrompt('p4')">Copy</button></div><pre id="p4" class="prompt-body">Summarize this deck in 6 bullets for the presenter.
+    <div class="prompt-box"><div class="prompt-head"><strong>Prompt P4</strong><button onclick="copyPrompt('p4')">Copy</button></div><div class="where">WHERE THIS PROMPT HAPPENS: PowerPoint in the revised deck from P3.</div><pre id="p4" class="prompt-body">Summarize this deck in 6 bullets for the presenter.
 Then draft speaker notes for the “Risks and asks” slide (60-90 seconds spoken length).
 Focus on trade-offs, decisions needed, and next-week actions.</pre></div>
 
@@ -142,6 +122,27 @@ Focus on trade-offs, decisions needed, and next-week actions.</pre></div>
       <li>Rewrite for audience before sharing broadly.</li>
       <li>Ask Copilot what assumptions it made and what is missing.</li>
     </ol>
+    </section>
+
+    <section id="storyline" class="tab-panel">
+      <h2 class="section-title">Storyline</h2>
+      <div class="prep">
+        Head office is preparing stores and Auto Service centres for winter tire changeover and holiday rush. You show how Copilot helps move from raw operating docs to store communications and leadership slides.
+      </div>
+    </section>
+
+    <section id="prep" class="tab-panel">
+      <h2 class="section-title">Prep checklist</h2>
+      <div class="prep">
+        <ol>
+          <li>Upload all sample files to one OneDrive/SharePoint folder.</li>
+          <li>Open Copilot Chat, Word, and PowerPoint with the same account.</li>
+          <li>Have these open before demo: Procedure doc, Visit Notes doc, Leadership Plan doc, Branded PPT template.</li>
+          <li>Create fresh file copies per session day.</li>
+          <li>Dry-run all prompts once and keep screenshots of expected outputs.</li>
+        </ol>
+      </div>
+    </section>
 
     <p class="footer">Designed for GitHub Pages deployment in repository <strong>AndrewConniff/word-pptx-tire</strong>.</p>
   </main>
@@ -151,6 +152,12 @@ Focus on trade-offs, decisions needed, and next-week actions.</pre></div>
       const text = document.getElementById(id).innerText;
       await navigator.clipboard.writeText(text);
       alert("Copied prompt to clipboard.");
+    }
+    function showTab(id, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      btn.classList.add('active');
     }
   </script>
 </body>
